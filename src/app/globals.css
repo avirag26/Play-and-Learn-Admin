@@ -1,0 +1,57 @@
+@import "tailwindcss";
+
+/* The Play & Learn palette (see play-and-learn/src/app/globals.css), used more quietly here:
+   white surfaces on cream, ink text, and the bright colours only as soft tints and accents. */
+:root {
+  --cream: #fff9ec;
+  --surface: #ffffff;
+  --ink: #30465d;
+  --ink-strong: #22384c;
+  --muted-ink: #6c7e8e;
+  --line: rgba(48, 70, 93, 0.12);
+  --sky: #e5f4ff;
+  --sunshine: #ffd968;
+  --mint: #bcefd4;
+  --coral: #ffb6a8;
+  --lavender: #d9cbff;
+  --world-blue: #76aae0;
+  --success: #e3f7ec;
+  --success-ink: #1d6a43;
+  --warning: #fff3cf;
+  --warning-ink: #7a5600;
+  --danger: #ffe7e2;
+  --danger-ink: #a2382a;
+}
+
+@theme inline {
+  --color-cream: var(--cream);
+  --color-surface: var(--surface);
+  --color-ink: var(--ink);
+  --color-ink-strong: var(--ink-strong);
+  --color-muted-ink: var(--muted-ink);
+  --color-line: var(--line);
+  --color-sky: var(--sky);
+  --color-sunshine: var(--sunshine);
+  --color-mint: var(--mint);
+  --color-coral: var(--coral);
+  --color-lavender: var(--lavender);
+  --color-world-blue: var(--world-blue);
+  --color-success: var(--success);
+  --color-success-ink: var(--success-ink);
+  --color-warning: var(--warning);
+  --color-warning-ink: var(--warning-ink);
+  --color-danger: var(--danger);
+  --color-danger-ink: var(--danger-ink);
+  --font-sans: var(--font-nunito), "Avenir Next", "Segoe UI", system-ui, sans-serif;
+}
+
+body {
+  background: var(--cream);
+  color: var(--ink);
+  font-family: var(--font-sans);
+}
+
+::selection {
+  background: var(--sunshine);
+  color: var(--ink);
+}
