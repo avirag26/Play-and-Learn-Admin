@@ -2,7 +2,7 @@ import { Alert, Badge, Button, Card, Stat } from "@/components/ui";
 import { durationText, formatMoney, type Game, type Overview, type Plan } from "@/lib/api";
 import { RecentPayments } from "./payments";
 
-const gatewayNames: Record<string, string> = { razorpay: "Razorpay", cashfree: "Cashfree", stripe: "Stripe", fake: "Test gateway" };
+const gatewayNames: Record<string, string> = { razorpay: "Razorpay", cashfree: "Cashfree", stripe: "Stripe", payu: "PayU", fake: "Test gateway" };
 
 export function gatewayLabel(provider: string | null): string {
   return provider ? gatewayNames[provider] ?? provider : "Not set up";
@@ -14,7 +14,7 @@ export function OverviewPanel({ overview, plan, games, provider, onEditPlan, onS
   const onSale = plan.active && provider !== null;
 
   return <div className="grid gap-5">
-    {provider === "fake" ? <Alert tone="warning">Payments use the <strong>test gateway</strong>: no real money moves. Set PAYMENT_PROVIDER to razorpay, cashfree or stripe in the API&apos;s .env before launch.</Alert>
+    {provider === "fake" ? <Alert tone="warning">Payments use the <strong>test gateway</strong>: no real money moves. Set PAYMENT_PROVIDER to payu, razorpay, cashfree or stripe in the API&apos;s .env before launch.</Alert>
       : !provider ? <Alert tone="warning">No payment gateway is set up, so parents can&apos;t buy Premium. Set PAYMENT_PROVIDER in the API&apos;s .env.</Alert> : null}
 
     <div className="grid gap-3 sm:grid-cols-2 xl:grid-cols-4">
